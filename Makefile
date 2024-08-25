@@ -415,8 +415,9 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -pipe \
 		   -Wno-unused-variable \
 		   -Wno-unused-label \
 		   -Wno-undef \
-		   -Wno-expansion-to-defined \
-		   -Wno-constant-logical-operand \
+		   -Wimplicit-function-declaration \
+		   -Wexpansion-to-defined \
+		   -Wconstant-logical-operand \
 		   -Waddress-of-packed-member \
 		   -Wsingle-bit-bitfield-constant-conversion \
 		   -ffast-math -mcpu=cortex-a55 -mtune=cortex-a55 \

@@ -1665,14 +1665,16 @@ start_testing:
 
 	if (no_builtin_file)
 		goto no_builtin;
-
-	if (test_item && CM_ENABLED)
+#ifdef CM_ENABLED
+	if (test_item)
 		validate_cm_test_results(dev, configuration, cmcp_info,
 			result, &final_pass, test_item);
-
-	if (test_item && CP_ENABLED)
+#endif
+#ifdef CP_ENABLED
+	if (test_item)
 		validate_cp_test_results(dev, configuration, cmcp_info,
 			result, &final_pass, test_item);
+#endif
 no_builtin:
 	/*full test and full check*/
 	if ((dad->cmcp_test_items == CMCP_FULL) && (dad->cmcp_range_check == 0))
